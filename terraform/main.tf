@@ -76,6 +76,12 @@ resource "aws_s3_object" "eb_app" {
   source = local.achive_path
 }
 
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  bucket = aws_s3_bucket.eb_app.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
 resource "aws_iam_instance_profile" "this" {
   name = "event-driven-ec2-profile"
   role = aws_iam_role.this.name
