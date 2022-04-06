@@ -12,12 +12,20 @@ terraform {
       source  = "hashicorp/archive"
       version = "2.2.0"
     }
+
+  }
+  cloud {
+    organization = "example-org-76fbff"
+
+    workspaces {
+      name = "ever-green-backend"
+    }
   }
 }
 
 
 provider "aws" {
-  region  = var.region
+  region = var.region
 }
 
 data "aws_caller_identity" "current_identity" {}
