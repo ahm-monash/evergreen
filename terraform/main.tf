@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.14.9"
+  required_version = ">= 1.1.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -12,13 +12,20 @@ terraform {
       source  = "hashicorp/archive"
       version = "2.2.0"
     }
+
+  }
+  cloud {
+    organization = "example-org-76fbff"
+
+    workspaces {
+      name = "ever-green-backend"
+    }
   }
 }
 
 
 provider "aws" {
-  profile = "default"
-  region  = var.region
+  region = var.region
 }
 
 data "aws_caller_identity" "current_identity" {}
@@ -50,8 +57,7 @@ locals {
   prefix              = "ever-green"
   ecr_repository_name = "${local.prefix}-image-repo"
   build_imge_tag      = "latest"
-  achive_path         = "${path.module}/../eb_app.zip"
-  source_files        = ["${path.module}/../package.json", "${path.module}/../.next"]
+  achive_path         = "${path.module}/eb_app.zip"
 }
 
 
@@ -76,7 +82,7 @@ resource "aws_s3_object" "eb_app" {
   source = local.achive_path
 }
 
-resource "aws_s3_bucket_versioning" "versioning_example" {
+resource "aws_s3_bucket_versioning" "this" {
   bucket = aws_s3_bucket.eb_app.id
   versioning_configuration {
     status = "Enabled"
