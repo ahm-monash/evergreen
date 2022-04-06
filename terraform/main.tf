@@ -57,8 +57,7 @@ locals {
   prefix              = "ever-green"
   ecr_repository_name = "${local.prefix}-image-repo"
   build_imge_tag      = "latest"
-  achive_path         = "${path.module}/../eb_app.zip"
-  source_files        = ["${path.module}/../package.json", "${path.module}/../.next"]
+  achive_path         = "${path.module}/eb_app.zip"
 }
 
 
