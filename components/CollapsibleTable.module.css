@@ -2,3 +2,12 @@
     color: blue;
 	width: "100vw";
 }
+
+.colVersion{ 
+    text-align: right
+}
+
+.tableHeaderFont{
+    font-weight: bold;
+    font-size: large;
+}
