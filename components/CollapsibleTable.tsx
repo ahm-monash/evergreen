@@ -73,11 +73,11 @@ const CollapsibleTable = (rows: JSX.Element[]) => {
 					</colgroup>
 					<TableHead >
 						<TableRow >
-							<TableCell></TableCell>
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}></TableCell>
 							{/* className is in a string in case I have to add other class names later*/}
-							<TableCell className={`${styles.tableHeaderFont}`}>name</TableCell>
-							<TableCell className={`${styles.colVersion} ${styles.tableHeaderFont}`}>version</TableCell>
-							<TableCell className={`${styles.tableHeaderFont}`}>link</TableCell>
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}>name</TableCell>
+							<TableCell className={`${styles.colVersion} ${styles.tableHeaderFont} ${styles.tableHeader}`}>version</TableCell>
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}>link</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>

@@ -3,11 +3,35 @@
 	width: "100vw";
 }
 
+/* controls the alignment of version column of table*/
 .colVersion{ 
     text-align: right
 }
 
+/* might replace later with heading css that is common across all elements with a heading*/
 .tableHeaderFont{
-    font-weight: bold;
+    font-weight: 550;
     font-size: large;
+}
+
+/*Styling for table header */
+.tableHeader{
+    --padding-val: 1.5rem;
+    --border-val: 0.5rem; /*TODO: fix border CSS */
+    padding-top: var(--padding-val);
+    padding-bottom: var(--padding-val);
+    border-bottom: var(--border-val)  solid #000;
+}
+
+/* adds shadow underneath table header - copied it from the ahm website */
+.tableHeader::after{
+    background: linear-gradient(180deg,rgba(0,0,0,.1),transparent);
+            bottom: -1rem;
+            content: "";
+            height: 1rem;
+            left: 0;
+            opacity: 1;
+            position: absolute;
+            right: 0;
+            transition: opacity .3s ease;
 }
