@@ -34,7 +34,7 @@ const Row = (props: { row: { name: string, version: string, link: string } }) =>
 					</IconButton>
 				</TableCell>
 				<TableCell component="th" scope="row">{row.name}</TableCell>
-				<TableCell align="right">{row.version}</TableCell>
+				<TableCell className={styles.colVersion} >{row.version}</TableCell>
 				<TableCell align="right">
 					(
 					<a href={row.link} target="_blank">

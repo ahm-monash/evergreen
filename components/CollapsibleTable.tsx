@@ -61,20 +61,23 @@ import Row from "./Row"
 const CollapsibleTable = (rows: JSX.Element[]) => {
 	return (
 		<div>
-			<TableContainer component={Paper}>
-				<Table size="small" aria-label="collapsible table">
+			 <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+			<TableContainer sx={{ maxHeight: "90vh" }} component={Paper}>
+				{/* Can't figure out why maxHeight: 100% won't work so right now has to be set to a specific height to scroll*/}
+				<Table  size="small" stickyHeader aria-label="sticky table">
 					<colgroup>
 						<col style={{width:'0%', backgroundColor: "#f6f6f6"}}/>
 						<col style={{width:'75%'}}/>
 						<col style={{width:'25%'}}/>
 						<col style={{width:'0%'}}/>
 					</colgroup>
-					<TableHead>
-						<TableRow>
-							<TableCell></TableCell>
-							<TableCell>Name</TableCell>
-							<TableCell>Version</TableCell>
-							<TableCell></TableCell>
+					<TableHead >
+						<TableRow >
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}></TableCell>
+							{/* className is in a string in case I have to add other class names later*/}
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}>name</TableCell>
+							<TableCell className={`${styles.colVersion} ${styles.tableHeaderFont} ${styles.tableHeader}`}>version</TableCell>
+							<TableCell className={`${styles.tableHeaderFont} ${styles.tableHeader}`}>link</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -82,6 +85,7 @@ const CollapsibleTable = (rows: JSX.Element[]) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			</Paper>
 		</div>
 	);
 };
