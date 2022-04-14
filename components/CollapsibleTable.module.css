@@ -17,7 +17,7 @@
 /*Styling for table header */
 .tableHeader{
     --padding-val: 1.5rem;
-    --border-val: 0.5rem; /*TODO: fix border CSS */
+    --border-val: 0.25rem; /*TODO: fix border CSS */
     padding-top: var(--padding-val);
     padding-bottom: var(--padding-val);
     border-bottom: var(--border-val)  solid #000;
