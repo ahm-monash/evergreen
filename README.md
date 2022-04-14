@@ -20,7 +20,7 @@ The `-n` allows you to skip git hooks.
 
 ## Provisioning the infrastructure locally
 
-Make sure you have terraform installed, to deploy follow these steps: 
+Make sure you have terraform installed, to deploy follow these steps:
 
 1. `terraform init`
 2. `bash bootstrap.sh`, currently works on linux, if on other OSs simply zip the required files(refer to `bootstrap.sh`)
