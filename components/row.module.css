@@ -20,9 +20,9 @@
 }
 
 .tableCellStyle{
-	font-weight: normal;
-    font-family: "Roboto", "Helvetica", "Arial", "Noto Sans", "sans-serif";
+	font-weight: bold;
+    font-family: 'Work Sans', sans-serif;
     font-size: large;
-	background-color: var(--colour-background);
-	color: var(--colour-font);
+	background-color: var(--colour-container-background);
+	color: var(--colour-font)
 }

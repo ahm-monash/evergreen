@@ -1,4 +1,5 @@
 {
+	"targetOrganisation": "octokit",
 	"rankCutoff": {
 		"major": "0.5.-1",
 		"minor": "0.0.-1"
